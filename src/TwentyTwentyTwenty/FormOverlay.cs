@@ -54,8 +54,8 @@ namespace TwentyTwentyTwenty
         {
             instructionLabel.Text = LocalizationManager.GetFormattedString("StartInstructionMessage", new Dictionary<string, object>
             {
-                ["distance"] = 20,
-                ["seconds"] = 20,
+                ["distance"] = distanceFeet,
+                ["seconds"] = durationSeconds,
             });
 
             KeyDown += (s, e) =>
