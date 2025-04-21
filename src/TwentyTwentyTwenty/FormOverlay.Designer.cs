@@ -49,7 +49,7 @@
             startButton.TabIndex = 1;
             startButton.Text = "Start Countdown";
             startButton.UseVisualStyleBackColor = true;
-            startButton.Click += startButton_Click;
+            startButton.Click += StartButton_Click;
             // 
             // instructionLabel
             // 
@@ -98,7 +98,7 @@
             // countdownTimer
             // 
             countdownTimer.Interval = 1000;
-            countdownTimer.Tick += countdownTimer_Tick;
+            countdownTimer.Tick += CountdownTimer_Tick;
             // 
             // FormOverlay
             // 
@@ -121,7 +121,6 @@
 
         #endregion
 
-        private Panel panel1;
         private Button startButton;
         private Label instructionLabel;
         private Label countdownLabel;

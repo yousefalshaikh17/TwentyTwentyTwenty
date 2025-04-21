@@ -19,19 +19,32 @@ namespace TwentyTwentyTwenty
             //this.Hide();
 
             // Start timer
-            this.routine_timer.Start();
+            this.routineTimer.Start();
 
+
+
+            DisplayOverlay();
+        }
+        private void ContinueTimer(object? sender, EventArgs e)
+        {
+            routineTimer.Start();
+        }
+
+        private void DisplayOverlay()
+        {
+            routineTimer.Stop();
             int durationSeconds = 20;
             int distanceFeet = 20;
-
             bool playSoundWhenDone = true;
             bool allowSnooze = true;
             int snoozeMinutes = 5;
+            FormOverlay display = new FormOverlay(durationSeconds, distanceFeet);
+            display.FormClosed += ContinueTimer;
+            display.Show();
 
-            new FormOverlay(durationSeconds, distanceFeet).Show();
         }
 
-        private void routine_timer_Tick(object sender, EventArgs e)
+        private void RoutineTimer_Tick(object sender, EventArgs e)
         {
             //var overlay = new FormOverlay();
             //overlay.Show();

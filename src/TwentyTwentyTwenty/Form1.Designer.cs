@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            routine_timer = new System.Windows.Forms.Timer(components);
+            routineTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
-            // routine_timer
+            // routineTimer
             // 
-            routine_timer.Interval = 20000;
-            routine_timer.Tick += routine_timer_Tick;
+            routineTimer.Interval = 20000;
+            routineTimer.Tick += RoutineTimer_Tick;
             // 
             // Form1
             // 
@@ -50,6 +50,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer routine_timer;
+        private System.Windows.Forms.Timer routineTimer;
     }
 }

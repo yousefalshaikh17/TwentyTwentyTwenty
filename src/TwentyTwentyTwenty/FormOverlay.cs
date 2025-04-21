@@ -50,18 +50,6 @@ namespace TwentyTwentyTwenty
             countdownTimer.Start();
         }
 
-        private void startButton_Click(object sender, EventArgs e)
-        {
-            startButton.Enabled = false;
-            startButton.Visible = false;
-            instructionLabel.Text = LocalizationManager.GetFormattedString("CountdownInstructionMessage", new Dictionary<string, object>
-            {
-                ["distance"] = 20,
-            });
-            StartCountdown();
-            countdownLabel.Visible = true;
-        }
-
         private void FormOverlay_Load(object? sender, EventArgs e)
         {
             instructionLabel.Text = LocalizationManager.GetFormattedString("StartInstructionMessage", new Dictionary<string, object>
@@ -79,13 +67,25 @@ namespace TwentyTwentyTwenty
             };
         }
 
-        private void countdownTimer_Tick(object sender, EventArgs e)
+        private void CountdownTimer_Tick(object sender, EventArgs e)
         {
             secondsLeft -= 1;
             if (secondsLeft > 0)
                 UpdateCountdownDisplay();
             else
                 CountdownFinished();
+        }
+
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            startButton.Enabled = false;
+            startButton.Visible = false;
+            instructionLabel.Text = LocalizationManager.GetFormattedString("CountdownInstructionMessage", new Dictionary<string, object>
+            {
+                ["distance"] = 20,
+            });
+            StartCountdown();
+            countdownLabel.Visible = true;
         }
     }
 }
