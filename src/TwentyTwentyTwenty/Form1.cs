@@ -19,13 +19,13 @@ namespace TwentyTwentyTwenty
             //this.Hide();
 
             // Start timer
-            this.routineTimer.Start();
+            routineTimer.Start();
 
 
 
             DisplayOverlay();
         }
-        private void ContinueTimer(object? sender, EventArgs e)
+        private void StartReminderTimer(object? sender, EventArgs e)
         {
             routineTimer.Start();
         }
@@ -39,7 +39,7 @@ namespace TwentyTwentyTwenty
             bool allowSnooze = true;
             int snoozeMinutes = 5;
             FormOverlay display = new FormOverlay(durationSeconds, distanceFeet);
-            display.FormClosed += ContinueTimer;
+            display.FormClosed += StartReminderTimer;
             display.Show();
 
         }
