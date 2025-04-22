@@ -83,6 +83,16 @@ namespace TwentyTwentyTwenty
             display.Show();
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            // Cleanup timers
+            notificationTimer.Stop();
+            notificationTimer.Dispose();
+            routineTimer.Stop();
+            routineTimer.Dispose();
+
+            base.OnFormClosing(e);
+        }
 
         private void NotificationTimer_Tick(object sender, EventArgs e)
         {
