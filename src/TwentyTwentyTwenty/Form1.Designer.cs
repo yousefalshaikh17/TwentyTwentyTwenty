@@ -30,12 +30,18 @@
         {
             components = new System.ComponentModel.Container();
             routineTimer = new System.Windows.Forms.Timer(components);
+            notificationTimer = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // routineTimer
             // 
             routineTimer.Interval = 20000;
             routineTimer.Tick += RoutineTimer_Tick;
+            // 
+            // notificationTimer
+            // 
+            notificationTimer.Interval = 5000;
+            notificationTimer.Tick += NotificationTimer_Tick;
             // 
             // Form1
             // 
@@ -51,5 +57,6 @@
         #endregion
 
         private System.Windows.Forms.Timer routineTimer;
+        private System.Windows.Forms.Timer notificationTimer;
     }
 }
